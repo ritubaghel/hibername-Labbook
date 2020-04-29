@@ -1,0 +1,67 @@
+package com.capg;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity  //this shows that this is an entity class
+@Table(name="authors") //optional -> we provide table name here, if we do not provide then it will take class name as table name
+
+public class Author implements Serializable
+{
+    private  static  final  long  serialVersionUID = 1L;  //serialized version stored by this 
+
+    @Id   //primary key 
+    @GeneratedValue //this will automatically generates new id for employee object for inserting into table
+    private   int   authorId;
+    private   String   firstName;
+    private   String   middleName;
+    private   String   lastName;
+    private   String   phoneNo;
+    
+	public  int  getAuthorId()
+	{
+		return authorId;
+	}
+	public void setAuthorId(int authorId) 
+	{
+		this.authorId = authorId;
+	}
+	public String getFirstName() 
+	{
+		return firstName;
+	}
+	public void setFirstName(String firstName) 
+	{
+		this.firstName = firstName;
+	}
+	public String getMiddleName()
+	{
+		return middleName;
+	}
+	public void setMiddleName(String middleName)
+	{
+		this.middleName = middleName;
+	}
+	public String getLastName()
+	{
+		return lastName;
+	}
+	public void setLastName(String lastName) 
+	{
+		this.lastName = lastName;
+	}
+	public String getPhoneNo()
+	{
+		return phoneNo;
+	}
+	public void setPhoneNo(String phoneNo)
+	{
+		this.phoneNo = phoneNo;
+	}
+    
+   
+}
